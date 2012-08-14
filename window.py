@@ -71,6 +71,10 @@ class Window(QtGui.QWidget):
         a = self.liste.currentItem().text()
         b = session.query(Livre).filter_by(titre = a).first()
         el = diabook.Diabook() 
+        el.aut_line.setText(("%s" % unicode(b.auteur)))
+        el.tit_line.setText(("%s" % unicode(b.titre)))
+        el.gen_line.setText(("%s" % unicode(b.genre)))
+
         el.exec_()
 
         auteur = el.aut_line.text()
