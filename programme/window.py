@@ -51,8 +51,9 @@ class Window(QtGui.QWidget):
         auteur = el.aut_line.text()
         titre = el.tit_line.text()
         genre = el.gen_line.text()
+        commentaire = el.com_line.toPlainText()
         
-        a = Livre(auteur, titre, genre)
+        a = Livre(auteur, titre, genre, commentaire)
         session.add(a)
         session.commit()
         self.liste.addItem(titre)
@@ -74,16 +75,19 @@ class Window(QtGui.QWidget):
         el.aut_line.setText(("%s" % unicode(b.auteur)))
         el.tit_line.setText(("%s" % unicode(b.titre)))
         el.gen_line.setText(("%s" % unicode(b.genre)))
+        el.com_line.setText(("%s" % unicode(b.commentaire)))
 
         el.exec_()
 
         auteur = el.aut_line.text()
         titre = el.tit_line.text()
         genre = el.gen_line.text()
+        commentaire = el.com_line.toPlainText()
 
         b.auteur = auteur
         b.titre = titre
         b.genre = genre
+        b.commentaire = commentaire
 
         session.commit()
         item = self.liste.takeItem(self.liste.currentRow())
@@ -98,6 +102,7 @@ class Window(QtGui.QWidget):
         el.aut_lab.setText(("Auteur: %s" % unicode(b.auteur)))
         el.tit_lab.setText(("Titre: %s" % unicode(b.titre)))
         el.gen_lab.setText(("Genre: %s" % unicode(b.genre)))
+        el.com_lab.setText(("Commentaire: %s" % unicode(b.commentaire)))
 
         el.exec_()
 

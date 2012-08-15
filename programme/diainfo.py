@@ -17,10 +17,12 @@ class Diainfo(QtGui.QDialog):
         self.aut_lab = QtGui.QLabel()
         self.tit_lab = QtGui.QLabel()
         self.gen_lab = QtGui.QLabel()
+        self.com_lab = QtGui.QLabel()
 
         layout.addWidget(self.aut_lab, 0, 0)
         layout.addWidget(self.tit_lab, 1, 0)
         layout.addWidget(self.gen_lab, 2, 0)
+        layout.addWidget(self.com_lab, 3, 0)
 
 
         self.setLayout(layout)

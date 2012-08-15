@@ -17,9 +17,11 @@ class Livre(Base):
     auteur = Column(String)
     titre = Column(String)
     genre = Column(String)
+    commentaire = Column(String)
 
-    def __init__(self, auteur, titre, genre):
+    def __init__(self, auteur, titre, genre, commentaire):
         self.auteur = auteur
         self.titre = titre
         self.genre = genre
+        self.commentaire = commentaire
 
